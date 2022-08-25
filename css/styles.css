@@ -1,0 +1,341 @@
+/*PARÁMETROS BASE*/
+* {
+    margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 62.5%;
+}
+
+body {
+	background-color: white;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(251, 74, 10, 0.979);
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: black;
+	border-radius: 5px;
+}
+
+.display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: auto auto auto auto; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "header header header"
+        "slide slide slide"
+        "productos productos productos"
+        "marcas marcas marcas";
+}
+
+/*HEADER*/
+.header-display {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+}
+
+.envios {
+    background-color: rgba(251, 74, 10, 0.979);
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+/*Display parte search bar*/
+.search-bar-display {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px 0 5px 0;
+    border-bottom: 1.5px solid rgba(192, 192, 192, 0.979);
+    padding-bottom: 20px;
+}
+
+/*Logo*/
+.logo-img {
+    width: 180px;
+}
+
+/*Search bar*/
+.search-bar {
+    width: 700px;
+    height: 30px;
+    padding: 5px 20px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    border: 2px solid black;
+    justify-self: center;
+}
+
+.search-bar button img {
+    width: 25px;
+}
+
+.search-bar button {
+    border: 0;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgba(251, 74, 10, 0.979);
+}
+
+.search-bar input {
+    background-color: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    font-size: 1.5rem;
+}
+
+/*Iconos*/
+.icons-container img {
+    width: 50px;
+}
+
+/*NAVBAR*/
+.navbar {
+    margin-top: 0;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+}
+
+.navbar ul li {
+    position: relative;
+    display: inline-block; 
+}
+
+.navbar ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    
+}
+
+.navbar ul li a:hover {
+    color: rgba(251, 74, 10, 0.979);
+}
+
+.navbar ul li ul {
+    position: absolute;
+    background-color: rgb(35, 35, 35);
+    opacity: 0.8;
+    width: 200px;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+
+.navbar ul li ul li {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-top: 1px solid rgba(192, 192, 192, 0.979);
+}
+
+.navbar ul li ul li a {
+    color: white;
+} 
+
+.navbar ul li:hover > ul {
+    display: initial;
+}
+
+#menu-bar {
+    display: none;
+}
+
+.menu-responsive {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/*SLIDE*/
+.slide {
+    grid-area: slide;
+    margin: 20px 0 40px 0;
+    height: 450px;
+}
+
+.slide img {
+    width: 100%;
+}
+
+/*PRODUCTOS*/
+.products-display {
+    grid-area: productos;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    width: 80%; 
+    text-align: center; 
+    border-bottom: 1px solid #000; 
+    line-height: 0.1em;
+    margin: 60px 0;
+    color: rgba(251, 74, 10, 0.979);
+    font-weight: 400;
+    font-size: 2rem;
+} 
+
+.line { 
+    background:#fff; 
+    padding:0 10px; 
+}
+
+p {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.gallery-display {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.gallery-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.long-img {
+    width: 58%;
+    height: 300px;
+    margin: 8px;
+}
+
+.short-img {
+    width: 38%;
+    height: 300px;
+    margin: 8px;
+}
+
+/*MARCAS*/
+
+.marcas-display {
+    grid-area: marcas;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.marcas-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.marcas-flex img {
+    width: 20%;
+}
+
+
+
+/*RESPONSIVE*/
+@media screen and (max-width: 991px) {
+    .menu-responsive {
+        display: initial;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 33%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        border-top: 1px solid rgba(19, 19, 19, 0.979);
+        display: none;
+        z-index: 12;
+    }
+
+    .navbar ul li {
+        width: 100%;
+        text-align: left;
+    }
+
+    .navbar ul li ul {
+        position: relative;
+        width: 100%;
+    }
+
+    .navbar ul li ul li {
+        background-color: rgb(172, 168, 168);
+    }
+
+    .navbar ul li ul li a {
+        color: black;
+    } 
+
+    #menu-bar:checked ~ .navbar {
+        display: initial;
+    }
+
+    h2 {
+        margin-top: 0px;
+    }
+
+    .long-img {
+        width: 80%;
+        height: 200px;
+    }
+    
+    .short-img {
+        width: 80%;
+        height: 200px;
+    }
+
+    .slide {
+        margin-bottom: 2px;
+    }
+    
+}
+
+@media screen and (min-width: 384px) and (max-width: 1100px) {
+    .search-bar {
+        width: 300px; 
+    }
+}
+
+@media screen and (max-width: 383px) {
+    .search-bar {
+        width: 200px; 
+        height: 20px;
+    }
+}
+
